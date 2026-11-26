@@ -1,0 +1,26 @@
+{
+  "name": "hologesture",
+  "version": "1.0.0",
+  "description": "Control 3D holograms with your hands, using your webcam, MediaPipe and Three.js.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 serve.py",
+    "app": "electron .",
+    "package": "electron-packager . HoloGesture --platform=darwin --arch=arm64 --out=dist --overwrite --icon=build/icon.icns --app-bundle-id=local.hologesture --app-category-type=public.app-category.education --extend-info=build/Info.extra.plist --ignore=\"^/(dist|test|calibration|build|serve\\.py|\\.gitignore|\\.DS_Store)\"",
+    "postpackage": "codesign --force --deep --sign - --identifier local.hologesture dist/HoloGesture-darwin-arm64/HoloGesture.app",
+    "install-app": "rm -rf ~/Applications/HoloGesture.app && mkdir -p ~/Applications && ditto dist/HoloGesture-darwin-arm64/HoloGesture.app ~/Applications/HoloGesture.app",
+    "release": "bash scripts/build-release.sh",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "0.10.14",
+    "three": "0.160.0"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "electron": "45.3.1"
+  },
+  "productName": "HoloGesture",
+  "main": "electron/main.cjs"
+}

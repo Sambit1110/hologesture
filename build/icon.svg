@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1a2e"/>
+      <stop offset="1" stop-color="#02060c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.47" r="0.5">
+      <stop offset="0" stop-color="#3fd8ff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#3fd8ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3fd8ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#3fd8ff" stop-opacity="0.28"/>
+    </linearGradient>
+  </defs>
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)"/>
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#glow)"/>
+  <rect x="101.5" y="101.5" width="821" height="821" rx="183.5" fill="none" stroke="#3fd8ff" stroke-opacity="0.35" stroke-width="3"/>
+  <!-- projector beam and base rings -->
+  <path d="M332 470 L692 470 L590 760 L434 760 Z" fill="url(#beam)"/>
+  <ellipse cx="512" cy="770" rx="190" ry="44" fill="none" stroke="#3fd8ff" stroke-width="10" stroke-opacity="0.85"/>
+  <ellipse cx="512" cy="770" rx="120" ry="26" fill="none" stroke="#3fd8ff" stroke-width="7" stroke-opacity="0.6" stroke-dasharray="26 18"/>
+  <!-- hologram: wireframe globe -->
+  <g fill="none" stroke="#7fe8ff" stroke-linecap="round">
+    <circle cx="512" cy="420" r="190" stroke-width="14"/>
+    <ellipse cx="512" cy="420" rx="190" ry="64" stroke-width="9" stroke-opacity="0.8"/>
+    <ellipse cx="512" cy="420" rx="64" ry="190" stroke-width="9" stroke-opacity="0.8"/>
+    <ellipse cx="512" cy="420" rx="135" ry="190" stroke-width="7" stroke-opacity="0.55"/>
+    <path d="M338 340 H686 M338 500 H686" stroke-width="7" stroke-opacity="0.55"/>
+  </g>
+  <!-- orbit ring and amber satellite -->
+  <ellipse cx="512" cy="420" rx="280" ry="86" fill="none" stroke="#ffc857" stroke-width="10" transform="rotate(-18 512 420)" stroke-opacity="0.9"/>
+  <circle cx="770" cy="335" r="26" fill="#ffc857"/>
+  <circle cx="512" cy="420" r="24" fill="#e6faff"/>
+</svg>
